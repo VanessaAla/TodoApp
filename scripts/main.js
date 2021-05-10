@@ -80,3 +80,19 @@ document
 
     updateCounters();
   });
+
+function cleanUpDoneTodos() {
+  // get all the "done" items
+  const doneItems = document.querySelectorAll(".completed");
+
+  // loop through the "done" todo items
+  for (let i = 0; i < doneItems.length; i++) {
+    // and remove them from the DOM
+    doneItems[i].remove();
+  }
+
+  // update the counters
+  updateCounters();
+}
+
+document.getElementById("clean-up").addEventListener("click", cleanUpDoneTodos);
